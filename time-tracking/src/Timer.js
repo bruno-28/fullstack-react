@@ -18,7 +18,6 @@ class Timer extends React.Component {
   handleStopClick = () => {
     this.props.onStopClick(this.props.id);
   };
-  // ...
 
   handleTrashClick = () => {
     this.props.onTrashClick(this.props.id);
