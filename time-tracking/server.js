@@ -1,13 +1,13 @@
-import express from "express";
-import bodyParser from "body-parser";
-import fs from "fs";
-import path from "path";
+const express = require("express");
+const bodyParser = require("body-parser");
+const path = require("path");
+const fs = require("fs");
 
 const app = express();
 
 const DATA_FILE = path.join(__dirname, "data.json");
 
-app.set("port", process.env.PORT || 3000);
+//app.set("port", process.env.PORT || 3000);
 
 app.use("/", express.static(path.join(__dirname, "public")));
 app.use(bodyParser.json());
@@ -112,6 +112,10 @@ app.get("/molasses", (_, res) => {
   }, 5000);
 });
 
-app.listen(app.get("port"), () => {
-  console.log(`Find the server at: http://localhost:${app.get("port")}/`);
+// app.listen(app.get("port"), () => {
+//   console.log(`Find the server at: http://localhost:${app.get("port")}/`);
+// });
+
+app.listen(process.env.PORT || 8080, () => {
+  console.log("Find the server at: http://localhost:8080");
 });
