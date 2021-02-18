@@ -90,3 +90,5 @@ window.client = (function () {
     deleteTimer,
   };
 })();
+
+export default window.client;
